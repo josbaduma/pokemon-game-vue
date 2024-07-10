@@ -22,8 +22,8 @@
       <b-col cols="12">
         <h1 class="text-center">Quien es ese Pokemón?</h1>
       </b-col>
-      <b-col cols="4"></b-col>
-      <b-col cols="4">
+      <b-col sm="12" md="4"></b-col>
+      <b-col sm="12" md="4">
         <div class="image-container py-4">
           <div class="image-wrapper">
             <img
@@ -50,12 +50,13 @@
           </div>
         </div>
       </b-col>
-      <b-col cols="4">
+      <b-col sm="12" md="4">
         <div v-if="!hidden && answer" class="text-center">
           <img
             :src="require('../assets/ash-ketchum.png')"
             alt="Ash Ketchum"
             width="250"
+            id="img-ash"
           />
         </div>
       </b-col>
@@ -184,12 +185,29 @@ h1 {
   border-radius: 50%;
   box-shadow: 10px 5px 5px rgba(54, 67, 255, 0.007462359943977592);
 }
+
 .pokemon {
   height: 200px;
   width: 100wh;
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px !important;
+  }
+  .image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+  .pokemon {
+    height: 100px;
+  }
+
+  #img-ash {
+    width: 100px;
+  }
+}
 .pokemon.hidden {
   filter: brightness(0);
 }
